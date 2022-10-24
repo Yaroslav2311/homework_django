@@ -5,7 +5,7 @@ exclude =
     .venv,
     manage.py,
     migrations
-
-
+ignore =
+    A003
 
 max-line-length=120
