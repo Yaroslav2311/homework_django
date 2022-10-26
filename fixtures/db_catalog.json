@@ -1,0 +1,120 @@
+[
+{
+  "model": "catalog.cities",
+  "pk": 1,
+  "fields": {
+    "citi": "Kyiv",
+    "country": "Ukraine"
+  }
+},
+{
+  "model": "catalog.cities",
+  "pk": 2,
+  "fields": {
+    "citi": "Kharkiv",
+    "country": "Ukraine"
+  }
+},
+{
+  "model": "catalog.cities",
+  "pk": 3,
+  "fields": {
+    "citi": "Lviv",
+    "country": "Ukraine"
+  }
+},
+{
+  "model": "catalog.cities",
+  "pk": 4,
+  "fields": {
+    "citi": "Sevastopol",
+    "country": "Ukraine"
+  }
+},
+{
+  "model": "catalog.cities",
+  "pk": 5,
+  "fields": {
+    "citi": "Dnipro",
+    "country": "Ukraine"
+  }
+},
+{
+  "model": "catalog.client",
+  "pk": 1,
+  "fields": {
+    "client": "Modji",
+    "email": "modji@gmail.com",
+    "cities": 1
+  }
+},
+{
+  "model": "catalog.client",
+  "pk": 2,
+  "fields": {
+    "client": "Agily",
+    "email": "ag.dn@gmail.com",
+    "cities": 5
+  }
+},
+{
+  "model": "catalog.client",
+  "pk": 3,
+  "fields": {
+    "client": "amstore",
+    "email": "amstor@gmail.com",
+    "cities": 4
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "name": "t-short",
+    "price": 400.0,
+    "clients": [
+      1
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "name": "hoodie",
+    "price": 820.0,
+    "clients": [
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "name": "windbreaker",
+    "price": 1300.0,
+    "clients": [
+      1
+    ]
+  }
+},
+{
+  "model": "catalog.providers",
+  "pk": 1,
+  "fields": {
+    "provider_name": "Truecolor",
+    "p_email": "yaroslav.boyko.2311@gmail.com",
+    "cities": 2
+  }
+},
+{
+  "model": "catalog.providers",
+  "pk": 2,
+  "fields": {
+    "provider_name": "KeepStyle",
+    "p_email": "style@gmail.com",
+    "cities": 3
+  }
+}
+]

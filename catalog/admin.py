@@ -1,3 +1,8 @@
-# from django.contrib import admin
+from django.contrib import admin
 
-# Register your models here.
+from .models import Cities, Client, Product, Providers
+
+admin.site.register(Cities)
+admin.site.register(Client)
+admin.site.register(Product)
+admin.site.register(Providers)
