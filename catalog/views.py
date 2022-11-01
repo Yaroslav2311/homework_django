@@ -1,15 +1,16 @@
 from django.shortcuts import render
 
-from .forms import Triagle
+from .forms import Triangle
 
 
-def foo(request):
+def triangle(request):
     if 'submit' in request.GET:
-        form = Triagle()
-        leg1 = int(request.GET.get('leg1'))
-        leg2 = int(request.GET.get('leg2'))
-        hypotenuse = ((leg1 ** 2) + (leg2 ** 2)) ** 0.5
-        return render(request, 'catalog/triangle.html', {'form': form, 'hypotenuse': hypotenuse})
+        form = Triangle(request.GET)
+        if form.is_valid():
+            leg1 = int(form.cleaned_data['leg1'])
+            leg2 = int(form.cleaned_data['leg2'])
+            hypotenuse = ((leg1 ** 2) + (leg2 ** 2)) ** 0.5
+            return render(request, 'catalog/triangle.html', {'form': form, 'hypotenuse': hypotenuse})
     else:
-        form = Triagle()
+        form = Triangle()
         return render(request, 'catalog/triangle.html', {'form': form})
