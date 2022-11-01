@@ -1,7 +1,9 @@
 from django.urls import path
 
-from .views import foo
+from .views import triangle
 
+app_name = 'catalog'
 urlpatterns = [
-    path('', foo),
+    path('', triangle, name='triangle'),
+
 ]
