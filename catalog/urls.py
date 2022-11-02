@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .views import triangle, person, update_person
+from .views import person, triangle, update_person
+
 
 app_name = 'catalog'
 urlpatterns = [

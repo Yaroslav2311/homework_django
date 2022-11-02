@@ -1,6 +1,7 @@
-from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect
-from .forms import Triangle, PersonForm
+from django.shortcuts import render
+
+from .forms import PersonForm, Triangle
 from .models import Person
 
 
