@@ -42,5 +42,5 @@ class Person(models.Model):
     last_name = models.CharField(max_length=150)
     email = models.EmailField()
 
-    def str(self):
+    def __str__(self):
         return self.first_name
