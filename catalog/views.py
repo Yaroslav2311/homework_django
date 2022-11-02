@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
-from .forms import Triangle
+from django.shortcuts import get_object_or_404, redirect
+from .forms import Triangle, PersonForm
+from .models import Person
 
 
 def triangle(request):
@@ -14,3 +15,27 @@ def triangle(request):
     else:
         form = Triangle()
         return render(request, 'catalog/triangle.html', {'form': form})
+
+
+def person(request):
+    if request.method == 'POST':
+        form = PersonForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('catalog:person')
+    else:
+        form = PersonForm()
+    return render(request, 'catalog/person.html', {'form': form})
+
+
+def update_person(request, pk):
+    obj = get_object_or_404(Person, pk=pk)
+    if request.method == 'POST':
+        form = PersonForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect('catalog:person')
+
+    else:
+        form = PersonForm(instance=obj)
+    return render(request, 'catalog/update_person.html', {'form': form, 'obj': obj})
