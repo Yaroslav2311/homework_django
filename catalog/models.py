@@ -35,3 +35,12 @@ class Providers(models.Model):
 
     def __str__(self):
         return self.provider_name
+
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    email = models.EmailField()
+
+    def str(self):
+        return self.first_name
