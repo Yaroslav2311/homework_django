@@ -44,3 +44,26 @@ class Person(models.Model):
 
     def __str__(self):
         return self.first_name
+
+
+class LogModel(models.Model):
+
+    methods = [
+        ('GET', 'GET'),
+        ('POST', 'POST'),
+        ('PUT', 'PUT'),
+        ('HEAD', 'HEAD'),
+        ('DELETE', 'DELETE'),
+        ('CONNECT', 'CONNECT'),
+        ('OPTIONS', 'OPTIONS'),
+        ('TRACE', 'TRACE'),
+        ('PATCH', 'PATCH')
+    ]
+    path = models.CharField(max_length=150)
+    method = models.CharField(max_length=150, choices=methods)
+    request_get = models.JSONField(default=dict)
+    request_post = models.JSONField(default=dict)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.method}: {self.path}'
